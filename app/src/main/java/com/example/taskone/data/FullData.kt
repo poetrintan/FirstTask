@@ -6,8 +6,8 @@ import com.example.taskone.model.Manhwa
 import com.example.taskone.model.Movie
 import com.example.taskone.model.About
 
-object FullData{
-    val Anime = listOf(
+object FullData {
+    val animes = listOf(
         Anime(
             Title = "Jujutsu Kaisen",
             Genre = "Action",
@@ -70,7 +70,7 @@ object FullData{
         )
     )
 
-    val Manhwa = listOf(
+    val manhwas = listOf(
         Manhwa(
             Title = "The Villainess Reverses the Hourglass",
             Genre = "Fantasy",
@@ -133,7 +133,7 @@ object FullData{
         )
     )
 
-    val Movie = listOf(
+    val movies = listOf(
         Movie(
             Title = "Howl's Moving Castle",
             Genre = "Fantasy",
@@ -196,7 +196,7 @@ object FullData{
         )
     )
 
-    val About = listOf(
+    val aboutData = listOf(
         About(
             Name = "Putri Andani Intan Permatasari",
             Email = "putriintan2602@gmail.com",

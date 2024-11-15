@@ -16,7 +16,7 @@ import com.example.taskone.model.Anime
 import com.example.taskone.model.Manhwa
 import com.example.taskone.component.AnimeItem
 import com.example.taskone.component.ManhwaItem
-import com.example.taskone.navigation.TopAppBarWithBackButton
+import com.example.taskone.component.TopAppBarWithBackButton
 
 @Composable
 fun HomeScreen(
@@ -36,8 +36,8 @@ fun HomeScreen(
 fun HomeScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
-    animeList: List<Anime> = FullData.Anime,
-    manhwaList: List<Manhwa> = FullData.Manhwa,
+    animeList: List<Anime> = FullData.animes,
+    manhwaList: List<Manhwa> = FullData.manhwas,
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp),

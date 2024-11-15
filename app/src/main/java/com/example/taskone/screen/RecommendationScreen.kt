@@ -16,10 +16,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.taskone.data.FullData
 import com.example.taskone.model.Movie
 import com.example.taskone.ui.theme.TaskOneTheme
-import com.example.taskone.navigation.TopAppBarWithBackButton
+import com.example.taskone.component.TopAppBarWithBackButton
 
 @Composable
 fun RecommendationsScreen(
@@ -29,16 +30,18 @@ fun RecommendationsScreen(
     Column {
         TopAppBarWithBackButton(
             title = "Recommendations",
-            showBackButton = false,
+            showBackButton = true,
             navController = navController
         )
     }
 }
 
 @Composable
-fun RecommendationsScreen(
+fun RecommendationScreen(
+    navController: NavController,
     modifier: Modifier = Modifier,
-    movies: List<Movie> = FullData.Movie
+    movies: List<Movie> = FullData.movies
+
 ) {
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Adaptive(160.dp),
@@ -63,6 +66,6 @@ fun RecommendationsScreen(
 @Composable
 fun RecommendationsScreenPreview() {
     TaskOneTheme {
-        RecommendationsScreen()
+        RecommendationScreen()
     }
 }

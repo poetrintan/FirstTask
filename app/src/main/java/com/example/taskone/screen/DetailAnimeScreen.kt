@@ -19,7 +19,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.taskone.data.FullData
 import com.example.taskone.model.Anime
-import com.example.taskone.navigation.TopAppBarWithBackButton
+import com.example.taskone.component.TopAppBarWithBackButton
+import com.example.taskone.R
 
 @Composable
 fun DetailAnimeScreen(
@@ -27,7 +28,7 @@ fun DetailAnimeScreen(
     animeTitle: String?,
     modifier: Modifier = Modifier
 ) {
-    val anime = FullData.Anime.find { it.Title == animeTitle }
+    val anime = FullData.animes.find { it.Title == animeTitle }
     anime?.let {
         Column(
             modifier = modifier.padding(16.dp)
@@ -37,14 +38,14 @@ fun DetailAnimeScreen(
     } ?: run {
         Text(text = "Anime not found", modifier = modifier.padding(16.dp))
     }
-}
-Column {
-    TopAppBarWithBackButton(
-        title = "Detail Anime",
-        showBackButton = true,
-        navController = navController
-    )
-}
+
+    Column {
+        TopAppBarWithBackButton(
+            title = "Detail Anime",
+            showBackButton = true,
+            navController = navController
+        )
+    }
 }
 
 
@@ -71,7 +72,7 @@ private fun DetailAnimeContent(
         Spacer(modifier = Modifier.width(16.dp))
         Column(modifier = Modifier.padding(4.dp)) {
             Text(
-                text = anime.Title,
+                text = "Title: ${anime.Title}",
                 fontSize = 25.sp,
                 fontWeight = FontWeight.Bold
             )
